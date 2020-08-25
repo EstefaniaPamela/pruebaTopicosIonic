@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar class="ios hydrated" align="center">
+    <ion-title class="ios title-ios hydrated">Nueva</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="full">
+    <form [formGroup]="bookingForm" (ngSubmit)="formSubmit()">
+      <ion-item>
+        <ion-label position="floating">Materia</ion-label>
+        <ion-input formControlName="materia" type="text" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Calificación 1</ion-label>
+        <ion-input formControlName="nota1" type="text" required id="nota1">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Calificación 2</ion-label>
+        <ion-input formControlName="nota2" type="text" required id="nota2">
+        </ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" color="primary" shape="full" expand="block">Guardar Calificación</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-list>
+</ion-content>

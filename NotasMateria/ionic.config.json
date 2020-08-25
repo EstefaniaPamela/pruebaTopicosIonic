@@ -1,0 +1,7 @@
+{
+  "name": "NotasMateria",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

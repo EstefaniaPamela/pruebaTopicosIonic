@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar align="center">
+    <ion-title>
+      Calificaciones
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="ios list-ios hydrated">
+    <ion-list-header class="ios hydrated">
+      <ion-icon name="list-outline"></ion-icon>
+      Materias y calificaciones
+    </ion-list-header>
+
+    <ion-item *ngFor="let booking of Bookings" class="user-list">
+      <!--<ion-label>
+        <h5>
+          <ion-icon name="library"></ion-icon> {{booking.materia}}
+        </h5>
+        <p align="right">
+          Nota 1<ion-icon name="checkbox-outline"></ion-icon> {{booking.nota1}}
+        </p>
+        <p>
+          Nota 2<ion-icon name="checkbox-outline"></ion-icon> {{booking.nota2}}
+        </p>
+      </ion-label>-->
+
+      <ion-grid>
+      
+        <ion-row>
+          
+            <ion-label>
+              <h4>
+                <ion-icon name="library"></ion-icon> 
+              </h4>
+              {{booking.materia}}
+            </ion-label>
+          
+          <ion-col align="center">
+            <p>
+              Nota 1: <ion-icon name="checkbox-outline"></ion-icon>   {{booking.nota1}}
+            </p>
+            
+            <p>
+              Nota 2: <ion-icon name="checkbox-outline"></ion-icon>   {{booking.nota2}}
+            </p>
+          </ion-col>
+        </ion-row>
+      
+      </ion-grid>
+
+      <div class="item-note" item-end>
+        <button ion-button clear [routerLink]="['/edit-appointment/', booking.$key]">
+          <ion-icon name="create" style="zoom:2.0"></ion-icon>
+        </button>
+        <button ion-button clear (click)="deleteBooking(booking.$key)">
+          <ion-icon name="trash" style="zoom:2.0" id="btn-delete"></ion-icon>
+        </button>
+      </div>
+
+    </ion-item>
+  </ion-list>
+</ion-content>
